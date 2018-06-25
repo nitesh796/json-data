@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JSON Assignment1</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="info">
+      <p>Firstname: <span id="demo1"></span></p>
+      <p>Lastname: <span id="demo2"></span></p>
+      <p>DOB: <span id="demo3"></span></p>
+      <p>Contact: <span id="demo4"></span></p>
+    </div>
+
+
+    <script type="text/javascript">
+        var myObj, myJson, text, obj;
+
+        myObj = {
+            "firstname": "Sagar",
+            "lastname": "Chand",
+            "dob": "22-07-1995",
+            "contact": "9876543210"
+          };
+
+        myJson = JSON.stringify(myObj);
+        localStorage.setItem("textJSON", myJson);
+
+        text = localStorage.getItem("textJSON");
+        obj = JSON.parse(text);
+
+        document.getElementById("demo1").innerHTML = obj.firstname;
+        document.getElementById("demo2").innerHTML = obj.lastname;
+        document.getElementById("demo3").innerHTML = obj.dob;
+        document.getElementById("demo4").innerHTML = obj.contact;
+
+
+    </script>
+  </body>
+</html>
