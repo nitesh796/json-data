@@ -15,28 +15,22 @@
     </div>
 
 
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
-        var myObj, myJson, text, obj;
-
-        myObj = {
+      $(document).ready(function(){
+        var obj;
+        obj = {
             "firstname": "Sagar",
             "lastname": "Chand",
             "dob": "22-07-1995",
             "contact": "9876543210"
           };
 
-        myJson = JSON.stringify(myObj);
-        localStorage.setItem("textJSON", myJson);
-
-        text = localStorage.getItem("textJSON");
-        obj = JSON.parse(text);
-
-        document.getElementById("demo1").innerHTML = obj.firstname;
-        document.getElementById("demo2").innerHTML = obj.lastname;
-        document.getElementById("demo3").innerHTML = obj.dob;
-        document.getElementById("demo4").innerHTML = obj.contact;
-
-
+        $("#demo1").text(obj.firstname);
+        $("#demo2").text(obj.lastname);
+        $("#demo3").text(obj.dob);
+        $("#demo4").text(obj.contact);
+      });
     </script>
   </body>
 </html>
